@@ -73,7 +73,7 @@ class CursorPaginator(object):
         qs = self.queryset
         page_size = first or last
         if page_size is None:
-            return CursorPage(qs, self)
+            return CursorPage(list(qs), self)
 
         if after is not None:
             qs = self.apply_cursor(after, qs)
